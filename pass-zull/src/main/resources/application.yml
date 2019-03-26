@@ -1,0 +1,35 @@
+server:
+  port: 9992
+spring:
+  application:
+    name: pass-zuul
+  messages:
+    basename: messages_zh_CN
+ribbon:
+  ReadTimeout: 60000
+  ConnectTimeout: 60000
+zuul:
+  routes:
+    user:
+      path: /user/**
+      serviceId: PAAS-USER
+      strip-prefix: false
+    cs:
+      path: /cs/**
+      serviceId: PAAS-CUSTOMER
+      strip-prefix: false
+    product:
+      path: /product/**
+      serviceId: SAAS-PRODUCT
+      strip-prefix: true
+    carloan:
+      sensitive-headers:
+      custom-sensitive-headers: true
+      path: /zh_carloan/**
+      url: ${carloan.path}
+      strip-prefix: false
+  host:
+    connect-timeout-millis: 10000
+    socket-timeout-millis: 60000
+debug: false
+
