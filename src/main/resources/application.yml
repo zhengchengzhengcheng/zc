@@ -16,7 +16,7 @@ zuul:
       strip-prefix: false
     cs:
       path: /cs/**
-      serviceId: PAAS-CUSTOMER
+      serviceId: SAAS-CUSTOMER
       strip-prefix: false
     product:
       path: /product/**
