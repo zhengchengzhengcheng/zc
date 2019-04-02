@@ -56,9 +56,9 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
         try {
             isDev(request);
             //跨域
-            if (cors(request, response)){
+           /* if (cors(request, response)){
                 return;
-            }
+            }*/
             if(isLogin(request)){
                 filterChain.doFilter(request, response);
             }else {
