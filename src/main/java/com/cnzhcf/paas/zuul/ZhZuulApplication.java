@@ -12,11 +12,13 @@ import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 import org.springframework.cloud.netflix.zuul.filters.ZuulProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.FilterType;
 import org.springframework.context.annotation.Profile;
 
 @EnableZuulProxy
 @SpringBootApplication
-@ComponentScan("com.cnzhcf.paas")
+@ComponentScan(basePackages = {"com.cnzhcf.paas"},
+		excludeFilters = @ComponentScan.Filter(type = FilterType.ASSIGNABLE_TYPE, classes = {com.cnzhcf.paas.commons.userutil.CrosConfiguration.class}))
 @EnableFeignClients("com.cnzhcf.paas.user.feign")
 @EnableEurekaClient
 public class ZhZuulApplication {
