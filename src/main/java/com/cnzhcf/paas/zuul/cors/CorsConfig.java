@@ -11,7 +11,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 
 //@Configuration
 public class CorsConfig extends WebMvcConfigurerAdapter {
-    private CorsConfiguration buildConfig() {
+   /* private CorsConfiguration buildConfig() {
         CorsConfiguration corsConfiguration = new CorsConfiguration();
         corsConfiguration.addAllowedOrigin("*");
         corsConfiguration.addAllowedHeader("*");
@@ -34,5 +34,5 @@ public class CorsConfig extends WebMvcConfigurerAdapter {
                 .allowCredentials(true)
                 .allowedMethods("GET", "POST", "DELETE", "PUT")
                 .maxAge(3600);
-    }
+    }*/
 }
