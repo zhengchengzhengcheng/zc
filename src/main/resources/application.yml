@@ -2,7 +2,7 @@ server:
   port: 9992
 spring:
   application:
-    name: pass-zuul
+    name: paas-zuul
   messages:
     basename: messages_zh_CN
 ribbon:
