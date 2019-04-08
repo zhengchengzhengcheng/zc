@@ -22,6 +22,10 @@ zuul:
       path: /product/**
       serviceId: SAAS-PRODUCT
       strip-prefix: true
+    order:
+      path: /order/**
+      serviceId: SAAS-ORDER
+      strip-prefix: true
     carloan:
       sensitive-headers:
       custom-sensitive-headers: true

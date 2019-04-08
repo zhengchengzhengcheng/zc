@@ -8,7 +8,7 @@ spring:
 #车贷地址--dev
 carloan:
   path: http://192.168.50.250:8080
-#eureka:
-#  client:
-#    serviceUrl:
-#      defaultZone: http://127.0.0.1:9990/eureka/
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://172.16.10.20:9990/eureka/
