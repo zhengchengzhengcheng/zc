@@ -1,7 +1,7 @@
 spring:
   cloud:
     config:
-      uri: http://192.168.0.87:8887/
+      uri: http://172.16.10.20:9991/
       profile: paas-zuul-dev,paas-common-dev,paas-common
       label: paas-branch
       name: paas-zuul,common
