@@ -7,7 +7,7 @@ spring:
       name: paas-zuul,common
 #车贷地址--dev
 carloan:
-  path: http://192.168.50.250:8080
+  path: http://192.168.50.250:8086
 eureka:
   client:
     serviceUrl:
