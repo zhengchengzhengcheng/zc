@@ -88,11 +88,11 @@ public class ZuulRouteLocator extends SimpleRouteLocator implements RefreshableR
             String sql = " select * from sys_zull_router_debug where ip = '" + ip + "'" ;
             //3.ResultSet类，用来存放获取的结果集！！
             ResultSet rs = statement.executeQuery(sql);
-            System.out.println("-----------------");
-            System.out.println("执行结果如下所示:");
-            System.out.println("-----------------");
-            System.out.println("path" + "\t" + "url"+ "\t" + "name") ;
-            System.out.println("-----------------");
+            logger.info("-----------------");
+            logger.info("执行结果如下所示:");
+            logger.info("-----------------");
+            logger.info("path" + "\t" + "url"+ "\t" + "name") ;
+            logger.info("-----------------");
             while (rs.next()) {
                 ZuulRouteVO temp = new ZuulRouteVO();
                 temp.setPath(rs.getString("path"));
