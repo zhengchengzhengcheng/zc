@@ -32,6 +32,10 @@ zuul:
       path: /zh_carloan/**
       url: ${carloan.path}
       strip-prefix: false
+    document:
+      path: /document/**
+      serviceId: PAAS-DOCUMENT
+      strip-prefix: false
   host:
     connect-timeout-millis: 10000
     socket-timeout-millis: 60000
