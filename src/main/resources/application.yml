@@ -36,6 +36,10 @@ zuul:
       path: /document/**
       serviceId: PAAS-DOCUMENT
       strip-prefix: false
+    manage:
+      path: /manage/**
+      serviceId: SAAS-MANAGE
+      strip-prefix: false
   host:
     connect-timeout-millis: 10000
     socket-timeout-millis: 60000
