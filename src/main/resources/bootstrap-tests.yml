@@ -1,0 +1,7 @@
+spring:
+  cloud:
+    config:
+      uri: http://172.16.10.102:9991/
+      profile: paas-zuul-tests,paas-common-tests,paas-common
+      label: paas-branch
+      name:  paas-zuul,common
