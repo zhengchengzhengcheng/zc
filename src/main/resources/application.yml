@@ -40,6 +40,10 @@ zuul:
       path: /manage/**
       serviceId: SAAS-MANAGE
       strip-prefix: false
+    cooperation:
+      path: /cooperation/**
+      serviceId: SAAS-COOPERATION
+      strip-prefix: false
   host:
     connect-timeout-millis: 10000
     socket-timeout-millis: 60000
