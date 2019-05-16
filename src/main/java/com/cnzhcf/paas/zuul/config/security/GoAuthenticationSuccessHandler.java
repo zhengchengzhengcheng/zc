@@ -7,6 +7,7 @@ import com.cnzhcf.paas.zuul.entity.LoginResult;
 import com.cnzhcf.paas.zuul.entity.MyRoleInfo;
 import com.cnzhcf.paas.zuul.entity.MyUserInfo;
 import com.cnzhcf.paas.zuul.util.JwtTokenUtil;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
@@ -23,6 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
+@Slf4j
 public class GoAuthenticationSuccessHandler implements AuthenticationSuccessHandler {
 
     @Autowired
@@ -65,6 +67,7 @@ public class GoAuthenticationSuccessHandler implements AuthenticationSuccessHand
         Long expiration = Long.valueOf(env.getProperty("jwt.expiration."+ source));
         //生成token
         String jwtToken = jwtTokenUtil.generateToken(info);
+        log.info("################### jwtToken" + jwtToken);
         //将用户信息写入缓存
         jwtTokenUtil.setExpire(jwtToken, FastJsonUtil.bean2Json(info), expiration);
         jwtTokenUtil.setExpire(sessionId, jwtToken, expiration);
