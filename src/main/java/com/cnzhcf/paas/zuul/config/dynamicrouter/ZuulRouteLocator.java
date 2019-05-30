@@ -43,6 +43,9 @@ public class ZuulRouteLocator extends SimpleRouteLocator implements RefreshableR
         LinkedHashMap<String, ZuulRoute> routesMap = new LinkedHashMap<String, ZuulRoute>();
         //从application.properties中加载路由信息
         routesMap.putAll(super.locateRoutes());
+        for (Map.Entry<String, ZuulRoute> entry : super.locateRoutes().entrySet()) {
+            System.out.println("#########   " + entry.getKey() + "##############     "  + entry.getValue());
+        }
         //从db中加载路由信息
         List<ZuulRouteVO> dbRouter = locateRoutesFromDB();
         //优化一下配置
