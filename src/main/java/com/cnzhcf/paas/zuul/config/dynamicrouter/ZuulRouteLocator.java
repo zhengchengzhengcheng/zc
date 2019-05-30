@@ -44,7 +44,7 @@ public class ZuulRouteLocator extends SimpleRouteLocator implements RefreshableR
         //从application.properties中加载路由信息
         routesMap.putAll(super.locateRoutes());
         for (Map.Entry<String, ZuulRoute> entry : super.locateRoutes().entrySet()) {
-            System.out.println("#########   " + entry.getKey() + "##############     "  + entry.getValue());
+           logger.info("#########   " + entry.getKey() + "##############     "  + entry.getValue());
         }
         //从db中加载路由信息
         List<ZuulRouteVO> dbRouter = locateRoutesFromDB();
@@ -102,7 +102,7 @@ public class ZuulRouteLocator extends SimpleRouteLocator implements RefreshableR
                 temp.setUrl(rs.getString("url"));
                 routers.add(temp);
                 //输出结果
-                System.out.println(temp.getPath() + "\t" + temp.getUrl() + "\t" + rs.getString("name"));
+                logger.info(temp.getPath() + "\t" + temp.getUrl() + "\t" + rs.getString("name"));
             }
             rs.close();
             con.close();
