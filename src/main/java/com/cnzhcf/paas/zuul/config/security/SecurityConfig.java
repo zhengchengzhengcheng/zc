@@ -83,7 +83,7 @@ public class SecurityConfig  extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 //处理跨域请求中的Preflight请求
                 .requestMatchers(CorsUtils::isPreFlightRequest).permitAll()
-                .antMatchers("/user/login", "/auth/**", "/zh_carloan/static/**", "/document/nauth/**").permitAll()
+                .antMatchers("/user/login", "/auth/**", "/zh_carloan/static/**", "/document/nauth/**","/zh_carloan/api/fl/gpsOrder/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
